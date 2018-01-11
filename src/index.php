@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="recruitment theme">
+	<meta name="keywords" content="front-end developer, recruitment, theme">
+	<meta name="author" content="Krystian Chołota">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>PGS Software - Recruitment theme</title>
+
+	<!-- build:css -->
+	<link rel="stylesheet" href="css/style.css">
+	<!-- endbuild -->
+
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+</head>
+<body>
+
+<div class="page-wrapper">
+	<header class="header">
+		<div class="container">
+			<div class="brand"><a href="index.php"></a></div>
+
+			<ul class="nav">
+				<li><a href="#about-us" class="current" data-tab="about-us">About us</a></li>
+				<li><a href="#skicams" data-tab="skicams">SkiCams</a></li>
+				<li><a href="#contact" data-tab="contact">Contact</a></li>
+			</ul>
+		</div>
+	</header>
+	<!-- /.header -->
+
+	<div class="container">
+
+		<section id="about-us" class="section-content current">
+			<div class="row">
+				<div class="col-3">
+					<img src="images/about-img1.jpg" alt="post1" />
+					<div class="desc">
+						<h2>Lorem ipsum</h2>
+						<p>Lorem ifdsf sd fsdfsd  sfdf sdfsd fsd<br />Lorem ifdsf sd fsdfsd  sfdf sdfsd fsd</p>
+					</div>
+				</div>
+				<div class="col-3">
+					<img src="images/about-img1.jpg" alt="post2" />
+					<div class="desc">
+						<h2>Lorem ipsum</h2>
+						<p>Lorem ifdsf sd fsdfsd  sfdf sdfsd fsd</p>
+					</div>
+				</div>
+				<div class="col-3">
+					<img src="images/about-img1.jpg" alt="post3" />
+					<div class="desc">
+						<h2>Lorem ipsum</h2>
+						<p>Lorem ifdsf sd fsdfsd  sfdf sdfsd fsd</p>
+					</div>
+				</div>
+				<div class="col-3">
+					<img src="images/about-img1.jpg" alt="post4" />
+					<div class="desc">
+						<h2>Lorem ipsum</h2>
+						<p>Lorem ifdsf sd fsdfsd  sfdf sdfsd fsd</p>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- /#about-us -->
+
+		<section id="skicams" class="section-content">
+			<div class="row">
+				<div class="col-2">
+					<div class="caption">
+						<h3>Pista Intermedia</h3>
+						<span class="date">date</span>
+					</div>
+					<ul class="cams">
+						<li><img src="" id="cam-1" /></li>
+						<li><img src="" id="cam-2" /></li>
+					</ul>
+				</div>
+				<div class="col-2">
+					<div class="caption">
+						<h3>Pista Piavac</h3>
+						<span class="date">date</span>
+					</div>
+					<ul class="cams">
+						<li><img src="" id="cam-3" /></li>
+						<li><img src="" id="cam-4" /></li>
+					</ul>
+				</div>
+			</div>
+		</section>
+		<!-- /#skicams -->
+
+		<section id="contact" class="section-content">
+			<form class="contact-form validate-form">
+				<div class="wrap-input validate-input" data-validate="Name is required">
+					<input class="input" type="text" name="name">
+					<span class="focus-input" data-placeholder="Name *"></span>
+				</div>
+
+				<div class="wrap-input validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+					<input class="input" type="text" name="email">
+					<span class="focus-input" data-placeholder="Email *"></span>
+				</div>
+
+				<div class="wrap-input validate-input" data-validate = "Message is required">
+					<textarea class="input" name="message"></textarea>
+					<span class="focus-input" data-placeholder="Message *"></span>
+				</div>
+
+				<div class="clear">
+					<button class="contact-form-btn">Send</button>
+				</div>
+			</form>
+		</section>
+		<!-- /#contact -->
+
+	</div>
+	<!-- /.container -->
+
+	
+</div>
+<!-- /.page-wrapper -->
+
+<footer class="footer">
+	<p>Powered by PGS</p>
+</footer>
+<!-- /footer -->
+
+<!-- Load SCRIPTS -->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+<!-- build:js -->
+<script src="js/plugins.js"></script>
+<script src="js/scripts.js"></script>
+<!-- endbuild -->
+</body>
+</html>

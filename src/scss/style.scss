@@ -1,0 +1,457 @@
+/*-------------------------------------------------------------------------------------
+Theme Name:	PGS-theme
+Version:	1.0.0
+Author:		Krystian Chołota
+-------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------
+[TABLE OF CONTENTS]
+
+	00. GENERAL
+	01. HEADER
+	02. ABOUT US - SECTION
+	02. CONTACT - SECTION
+	04. FOOTER
+	05. RESPONSIVE
+
+-------------------------------------------------------------------------------------*/
+
+@import 'plugins';
+
+
+body {
+	overflow-x: hidden !important;
+}
+
+/*-----------------------------------------------------------------------------------*/
+/*	00. GENERAL
+/*-----------------------------------------------------------------------------------*/
+
+.clear {
+	clear: both;
+	width: 100%;
+	overflow: hidden;
+}
+
+body {
+	font-family: 'Roboto', sans-serif;
+	background: #f8f8f8;
+	color: #565656;
+	font-size: 15px;
+	font-weight: 500;
+	margin: 0;
+}
+.container {
+	width: calc(100% - 20px);
+	max-width: 1260px;
+	padding: 0 10px;
+	margin: 0 auto;
+}
+
+.section-content {
+	display: none;
+
+	&.current {
+		display: inherit;
+		transition: all 0.4s ease;
+	}
+}
+
+
+/*-----------------------------------------------------------------------------------*/
+/*	01. HEADER
+/*-----------------------------------------------------------------------------------*/
+
+.header {
+	background: #FFF;
+	width: 100%;
+	border-bottom: 2px solid #e9e9e9;
+
+	.brand {
+		padding: 50px 0;
+
+		
+		a {
+			background-image: url('../images/logo-pgs.png');
+			background-size: cover;
+			width: 150px;
+			height: 80px;
+			display: block;
+		}
+	}
+
+	.nav {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+
+		li {
+			display: inline-block;
+			padding: 0 35px;
+
+			&:first-of-type {
+				padding-left: 0;
+			}
+
+			a {
+				position: relative;
+				top: 2px;
+				font-size: 16px;
+				text-transform: uppercase;
+				text-decoration: none;
+				font-weight: bold;
+				color: #7f7f7f;
+				display: block;
+				padding-bottom: 10px;
+				border-bottom: 2px solid transparent;
+
+				&:hover, &.current {
+					color: #e18d56;
+					border-bottom: 2px solid #e18d56;
+				}
+			}
+		}
+	}
+}
+
+/*-----------------------------------------------------------------------------------*/
+/*	02. List-flex
+/*-----------------------------------------------------------------------------------*/
+
+.row {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: stretch;
+	flex-flow: wrap;
+	align-content: stretch;
+	list-style: none;
+	color: #616161;
+	padding: 0;
+	margin: 20px 0;
+
+	// About us - 3 columns
+	.col-3 {
+		background: #FFF;
+		flex-basis: 30%;
+		border: 2px solid #ebebeb;
+		border-radius: 5px;
+		margin: 20px 0;
+
+		&:last-child {
+			margin-right: 0;
+		}
+
+		img {
+			width: 100%;
+		}
+
+		.desc {
+			padding: 20px 10px;
+
+			h2 {
+				margin: 0 auto;
+			}
+		}
+	}
+	
+	// Skicams - 2 columns
+	.col-2 {
+		background: #FFF;
+		flex-basis: 48%;
+		border: 2px solid #ebebeb;
+		border-radius: 5px;
+		margin: 20px 0;
+
+		&:last-child {
+			margin-right: 0;
+		}
+
+		.caption {
+			padding: 20px 10px;
+			position: relative;
+
+			h3 {
+				margin: 0 auto;
+				text-align: center;
+			}
+			span.date {
+				position: absolute;
+				right: 10px;
+				top: 10px;
+				color: #d3d2d2;
+				font-size: 12px;
+			}
+		}
+
+		.cams {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+
+			li {
+				display: block;
+				width: 100%;
+
+				img {
+					width: 100%;
+				}
+			}
+		}
+	}
+}
+
+
+/*-----------------------------------------------------------------------------------*/
+/*	03. Section Contact
+/*-----------------------------------------------------------------------------------*/
+
+#contact.current {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.contact-form {
+	width: 50%;
+	background: #FFF;
+	border-radius: 5px;
+	border: 2px solid #ebebeb;
+	padding: 20px 10px;
+	margin: 0 auto;
+}
+
+.wrap-input {
+	width: 100%;
+	position: relative;
+	border-bottom: 2px solid #adadad;
+	margin-bottom: 37px;
+}
+
+.input {
+	display: block;
+	width: 100%;
+	font-size: 15px;
+	color: #555555;
+	line-height: 1.2;
+	border: 0;
+}
+
+.focus-input {
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	pointer-events: none;
+}
+
+.focus-input::before {
+	content: "";
+	display: block;
+	position: absolute;
+	bottom: -2px;
+	left: 0;
+	width: 0;
+	height: 2px;
+
+	transition: all 0.4s;
+
+	background: #e18d56;
+	background: linear-gradient(45deg, #e18d56, #e18d56);
+}
+
+.focus-input::after {
+	content: attr(data-placeholder);
+	display: block;
+	width: 100%;
+	position: absolute;
+	top: 0px;
+	left: 0;
+
+	font-size: 13px;
+	color: #999999;
+	line-height: 1.2;
+
+	transition: all 0.4s;
+}
+
+/*---------------------------------------------*/
+input.input {
+	height: 45px;
+}
+
+input.input + .focus-input::after {
+	top: 16px;
+	left: 0;
+}
+
+textarea.input {
+	min-height: 115px;
+	padding-top: 13px;
+	padding-bottom: 13px;
+}
+
+textarea.input + .focus-input::after {
+	top: 16px;
+	left: 0;
+}
+
+.input:focus + .focus-input::after {
+	top: -13px;
+}
+
+.input:focus + .focus-input::before {
+	width: 100%;
+}
+
+.has-val.input + .focus-input::after {
+	top: -13px;
+}
+
+.has-val.input + .focus-input::before {
+	width: 100%;
+}
+
+.contact-form-btn {
+	background: rgb(126, 126, 230);
+	padding: 10px 20px;
+	float: right;
+	clear: both;
+	margin: 0;
+	border: 0;
+	border-radius: 5px;
+	text-transform: uppercase;
+	color: #FFF;
+}
+
+
+
+/*------------------------------------------------------------------
+[ Alert validate ]*/
+
+.validate-input {
+	position: relative;
+}
+
+.alert-validate::before {
+	content: attr(data-validate);
+	position: absolute;
+	max-width: 70%;
+	background-color: #FFF;
+	border: 1px solid #e18d56;
+	border-radius: 2px;
+	padding: 4px 25px 4px 10px;
+	top: 50%;
+	transform: translateY(-50%);
+	right: 0px;
+	pointer-events: none;
+
+	color: #c80000;
+	font-size: 13px;
+	line-height: 1.4;
+	text-align: left;
+
+	visibility: hidden;
+	opacity: 0;
+
+	transition: opacity 0.4s;
+}
+
+.alert-validate::after {
+	content: "Error";
+	display: block;
+	position: absolute;
+	color: #c80000;
+	font-size: 16px;
+	top: 50%;
+	transform: translateY(-50%);
+	right: 8px;
+}
+
+.alert-validate:hover:before {
+	visibility: visible;
+	opacity: 1;
+}
+.alert-validate:hover:after {
+	visibility: hidden;
+	opacity: 0;
+}
+
+@media (max-width: 992px) {
+	.alert-validate::before {
+		visibility: visible;
+		opacity: 1;
+	}
+}
+
+
+
+/*-----------------------------------------------------------------------------------*/
+/*	04. FOOTER
+/*-----------------------------------------------------------------------------------*/
+
+.footer {
+	background: #282828;
+	position: relative;
+	width: 100%;
+	bottom: 0px;
+	color: #666666;
+	overflow: hidden;
+	padding: 20px 0;
+	text-align: center;
+	font-weight: bold;
+
+	p {
+		color: #7b7b7b;
+		padding: 20px 0;
+
+		&:after {
+			content: ""; 
+			background: #404040; 
+			position: absolute; 
+			top: 25%;
+			left: 0;
+			right: 0;
+			margin: auto;
+			height: 2px; 
+			width: 50%;
+		}
+	}
+}
+
+/*-----------------------------------------------------------------------------------*/
+/*	05. RESPONSIVE
+/*-----------------------------------------------------------------------------------*/
+
+@media screen and (max-width: 768px) {
+	.row {
+		.col-3 {
+			flex-basis: 45%;
+		}
+		.col-2 {
+			flex-basis: 100%;
+		}
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.nav {
+		li {
+			display: block;
+			width: 100%;
+			padding: 0 !important;
+
+			a {
+				padding: 15px 0 !important;
+				text-align: center
+			}
+		}
+	}
+
+	.row {
+		.col-3{
+			flex-basis: 100%;
+		}
+	}
+}

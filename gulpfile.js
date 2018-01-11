@@ -24,7 +24,7 @@ var config = {
 		css: 'src/css/**/*.css',
 		js: 'src/js/*.js',
 		img: 'src/images/**/*.{jpg,jpeg,png,gif,ico,svg}',
-		index: 'src/*.php',
+		index: 'src/*.html',
 		scss: 'src/scss/**/*.scss',
 		portfolio: 'src/portfolio/**/*.html'
 	},
@@ -49,7 +49,7 @@ gulp.task('reload', function() {
 
 gulp.task('serve', ['sass'], function() {
 	browserSync.init({
-        proxy: 'local.pgs-theme/' + config.src
+        server: "./src"
     });
 
 	gulp.watch([config.in.index, config.in.js], ['reload']);

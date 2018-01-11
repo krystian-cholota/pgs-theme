@@ -217,7 +217,7 @@ body {
 	border-radius: 5px;
 	border: 2px solid #ebebeb;
 	padding: 20px 10px;
-	margin: 0 auto;
+	margin: 20px auto;
 }
 
 .wrap-input {
@@ -234,6 +234,7 @@ body {
 	color: #555555;
 	line-height: 1.2;
 	border: 0;
+	resize: none;
 }
 
 .focus-input {
@@ -298,7 +299,7 @@ textarea.input + .focus-input::after {
 }
 
 .input:focus + .focus-input::after {
-	top: -13px;
+	top: -15px;
 }
 
 .input:focus + .focus-input::before {
@@ -306,7 +307,7 @@ textarea.input + .focus-input::after {
 }
 
 .has-val.input + .focus-input::after {
-	top: -13px;
+	top: -15px;
 }
 
 .has-val.input + .focus-input::before {
@@ -314,7 +315,7 @@ textarea.input + .focus-input::after {
 }
 
 .contact-form-btn {
-	background: rgb(126, 126, 230);
+	background: #2196f3;
 	padding: 10px 20px;
 	float: right;
 	clear: both;
@@ -323,13 +324,10 @@ textarea.input + .focus-input::after {
 	border-radius: 5px;
 	text-transform: uppercase;
 	color: #FFF;
+	cursor: pointer;
 }
 
-
-
-/*------------------------------------------------------------------
-[ Alert validate ]*/
-
+// Alert validate
 .validate-input {
 	position: relative;
 }
@@ -382,10 +380,24 @@ textarea.input + .focus-input::after {
 	.alert-validate::before {
 		visibility: visible;
 		opacity: 1;
+		padding: 4px 50px 4px 10px;
+	}
+	.alert-validate:hover:after {
+		visibility: visible;
+		opacity: 1;
 	}
 }
 
-
+@media (max-width: 768px) {
+	.alert-validate::before {
+		position: absolute;
+		top: 0;
+		width: 100%;
+	}
+	.alert-validate::after {
+		top: 0;
+	}
+}
 
 /*-----------------------------------------------------------------------------------*/
 /*	04. FOOTER
@@ -415,7 +427,7 @@ textarea.input + .focus-input::after {
 			right: 0;
 			margin: auto;
 			height: 2px; 
-			width: 50%;
+			width: 40%;
 		}
 	}
 }

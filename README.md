@@ -1,4 +1,5 @@
 # pgs-theme
+<<<<<<< HEAD
 
 /*
 This developer information file.

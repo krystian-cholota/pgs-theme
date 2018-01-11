@@ -376,29 +376,6 @@ textarea.input + .focus-input::after {
 	opacity: 0;
 }
 
-@media (max-width: 992px) {
-	.alert-validate::before {
-		visibility: visible;
-		opacity: 1;
-		padding: 4px 50px 4px 10px;
-	}
-	.alert-validate:hover:after {
-		visibility: visible;
-		opacity: 1;
-	}
-}
-
-@media (max-width: 768px) {
-	.alert-validate::before {
-		position: absolute;
-		top: 0;
-		width: 100%;
-	}
-	.alert-validate::after {
-		top: 0;
-	}
-}
-
 /*-----------------------------------------------------------------------------------*/
 /*	04. FOOTER
 /*-----------------------------------------------------------------------------------*/
@@ -436,6 +413,18 @@ textarea.input + .focus-input::after {
 /*	05. RESPONSIVE
 /*-----------------------------------------------------------------------------------*/
 
+@media screen and (max-width: 992px) {
+	.alert-validate::before {
+		visibility: visible;
+		opacity: 1;
+		padding: 4px 50px 4px 10px;
+	}
+	.alert-validate:hover:after {
+		visibility: visible;
+		opacity: 1;
+	}
+}
+
 @media screen and (max-width: 768px) {
 	.row {
 		.col-3 {
@@ -444,6 +433,15 @@ textarea.input + .focus-input::after {
 		.col-2 {
 			flex-basis: 100%;
 		}
+	}
+
+	.alert-validate::before {
+		position: absolute;
+		top: 0;
+		width: 100%;
+	}
+	.alert-validate::after {
+		top: 0;
 	}
 }
 
